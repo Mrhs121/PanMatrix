@@ -3,7 +3,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-username/PanMatrix/pulls)
 
-**PanMatrix：一个通过分块技术，将文件分布式存储于多个网盘，以实现极致下载加速的开源系统。**
+**PanMatrix：一个通过分块技术，将文件分布式存储于多个网盘，以实现极致下载加速的开源分布式文件系统。**
 
 > **分而存之，合而加速。 | Scatter the Chunks, Unite the Speed.**
 
