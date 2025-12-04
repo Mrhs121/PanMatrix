@@ -1,0 +1,22 @@
+core:
+  chunk_size: 4194304      # 4MB条带大小
+  metadata_path: "./data/metadata"
+  max_upload_concurrency: 8
+  max_download_concurrency: 16
+
+baidu:
+  enabled: true
+  app_id: "your_baidu_app_id"
+  app_key: "your_baidu_app_key"
+  access_token: "your_baidu_access_token"
+  storage_path: "./data/baidu"
+
+aliyun:
+  enabled: true
+  app_id: "your_aliyun_app_id"
+  app_secret: "your_aliyun_app_secret"
+  access_token: "your_aliyun_access_token"
+  storage_path: "./data/aliyun"
+
+local:
+  storage_path: "./data/local"
