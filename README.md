@@ -3,7 +3,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-username/PanMatrix/pulls)
 
-**PanMatrix：一个通过Raid技术，将文件分布式存储于多个网盘，以实现极致下载加速的开源分布式文件系统。**
+**RaidOverYunPan：一个通过Raid技术，将文件分布式存储于多个网盘，以实现极致下载加速的开源分布式文件系统。**
 
 > **分而存之，合而加速。 | Scatter the Chunks, Unite the Speed.**
 
@@ -11,7 +11,7 @@
 
 ## 📖 项目简介
 
-**PanMatrix** 是一个创新的、个人级的开源存储网关。它的核心使命是：**利用Raid的思想，打破你对单一网盘的依赖与速度枷锁。**
+**RaidOverYunPan** 是一个创新的、个人级的开源存储网关。它的核心使命是：**利用Raid的思想，打破你对单一网盘的依赖与速度枷锁。**
 
 你是否曾受限于单个网盘的速度？PanMatrix 提供了终极解决方案。通过将大文件**分块**并**分布式**地存储 across multiple cloud drives (如百度网盘、阿里云盘、OneDrive 等)，PanMatrix 在下载时能够从多个来源并行获取数据块，智能合并为完整文件，从而实现下载速度的**数量级提升**。本质上，您正在用多个免费的网盘，为自己构建一个高性能、高可用的“私有存储矩阵”。
 
@@ -105,4 +105,4 @@ A: 从技术上讲没有硬性上限，但受限于本地客户端的管理和�
 
 ---
 
-**如果 PanMatrix 让您看到了突破存储限制的曙光，请给我们一个 ⭐️ Star！这是支持我们持续开发的最大动力。**
+**如果 RaidOverYunPan 让您看到了突破存储限制的曙光，请给我们一个 ⭐️ Star！这是支持我们持续开发的最大动力。**
