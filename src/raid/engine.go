@@ -7,7 +7,7 @@ import (
 	"math"
 	"sync"
 
-	"panmatrix/drivers"
+	"drivers"
 )
 
 // RAID级别定义
