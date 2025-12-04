@@ -1,9 +1,9 @@
-# PanMatrix (技术方案目前还在初步构思中)
+# RaidOverYunPan (技术方案目前还在初步构思中)
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-username/PanMatrix/pulls)
 
-**PanMatrix：一个通过分块技术，将文件分布式存储于多个网盘，以实现极致下载加速的开源分布式文件系统。**
+**PanMatrix：一个通过Raid技术，将文件分布式存储于多个网盘，以实现极致下载加速的开源分布式文件系统。**
 
 > **分而存之，合而加速。 | Scatter the Chunks, Unite the Speed.**
 
@@ -11,7 +11,7 @@
 
 ## 📖 项目简介
 
-**PanMatrix** 是一个创新的、个人级的开源存储网关。它的核心使命是：**利用分布式系统的思想，打破你对单一网盘的依赖与速度枷锁。**
+**PanMatrix** 是一个创新的、个人级的开源存储网关。它的核心使命是：**利用Raid的思想，打破你对单一网盘的依赖与速度枷锁。**
 
 你是否曾受限于单个网盘的速度？PanMatrix 提供了终极解决方案。通过将大文件**分块**并**分布式**地存储 across multiple cloud drives (如百度网盘、阿里云盘、OneDrive 等)，PanMatrix 在下载时能够从多个来源并行获取数据块，智能合并为完整文件，从而实现下载速度的**数量级提升**。本质上，您正在用多个免费的网盘，为自己构建一个高性能、高可用的“私有存储矩阵”。
 
@@ -29,20 +29,27 @@
 PanMatrix 的核心工作流程如下，它展示了文件从上传到下载的完整生命周期：
 
 ```mermaid
-flowchart TD
-    A[用户文件] --> B(文件分块<br>与元数据创建)
-    B --> C{分布式存储<br>到多个网盘}
-    C --> D[网盘 A]
-    C --> E[网盘 B]
-    C --> F[网盘 ...]
+graph TB
+    subgraph "RAID逻辑层"
+        A[用户文件] --> B[RAID控制器]
+        B --> C[数据分条 Stripe]
+        C --> D[块计算与分布]
+    end
     
-    G[用户下载请求] --> H(并行下载<br>所有数据块)
-    D & E & F --> H
-    H --> I(校验哈希<br>与文件合并)
-    I --> J[本地完整文件]
+    subgraph "物理存储层"
+        D --> E[百度云盘<br>驱动器1]
+        D --> F[阿里云盘<br>驱动器2]
+        D --> G[OneDrive<br>驱动器3]
+        D --> H[本地缓存<br>驱动器4]
+    end
     
-    B --> K[本地元数据库<br>文件/块映射关系]
-    H --> K
+    subgraph "冗余保护"
+        I[奇偶校验计算]
+        D --> I
+        I --> E
+        I --> F
+        I --> G
+    end
 ```
 
 1.  **上传流程**：文件被智能地分割成小块，元数据记录在本地，数据块被并行上传到不同的网盘。
