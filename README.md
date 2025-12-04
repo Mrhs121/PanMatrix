@@ -58,8 +58,25 @@ graph TB
 
 ## 🚀 快速开始
 
-### 前置要求
+
 ### 📦 安装与配置
+
+#### 编译
+`go build -o panmatrix-raid main.go`
+
+#### 使用RAID0上传文件（条带化，无冗余，速度最快）
+`./panmatrix-raid -raid=0 -upload=/path/to/large_file.zip`
+
+#### 使用RAID1上传文件（镜像，完全冗余，最安全）
+`./panmatrix-raid -raid=1 -upload=/path/to/important_document.pdf`
+
+#### 使用RAID5上传文件（分布式奇偶校验，平衡性能与安全）
+`./panmatrix-raid -raid=5 -upload=/path/to/database_backup.sql`
+
+#### 下载文件
+`./panmatrix-raid -download=file_1678888888888888888 -output=./downloads`
+
+
 ### 🎯 使用示例
 ## 🤝 如何贡献
 
